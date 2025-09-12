@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoafLover</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2g8w3+C0v1L4J/S/m1c+o/VbA/jP5Vv/6aA/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
+
+    <!-- Fixed Header Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-indigo-600">LoafLover</a>
+            <ul class="flex space-x-4 md:space-x-8 items-center">
+                <li><a id="nav-home" href="#home" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="home">Home</a></li>
+                <li><a id="nav-about" href="#about" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="about">About</a></li>
+                <li><a id="nav-projects" href="#projects" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="projects">Projects</a></li>
+                <li><a id="nav-fun-stuff" href="#fun-stuff" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="fun-stuff">Fun Stuff</a></li>
+                <li><a id="nav-socials" href="#socials" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="socials">Socials</a></li>
+                <li><a id="nav-contact" href="#contact" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center section-padding bg-gray-100 dark:bg-gray-800 transition-colors duration-500">
+            <div class="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+                <!-- Left Column: Image and Details -->
+                <div class="flex flex-col items-center lg:items-end">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-in-out border-4 border-white dark:border-gray-700">
+                        <!-- The URL below automatically fetches your GitHub profile picture. If your username is different, just change 'LoafLover' in the src attribute. -->
+                        <img src="https://github.com/LoafLover.png" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Right Column: Name and Intro -->
+                <div class="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+                    <span class="text-base font-semibold text-blue-500 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full border border-blue-500 dark:border-blue-400 shadow-md">
+                        Security Researcher
+                    </span>
+                    <h1 class="mt-8 text-5xl md:text-6xl font-extrabold text-gray-800 dark:text-white leading-tight mb-4">
+                        Hello, I'm <br class="hidden lg:inline"> LoafLover
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
+                        • Digital Forensics • Python/C# • Data Recovery
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="min-h-screen flex items-center justify-center section-padding bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+            <div class="container mx-auto p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">About Me</h2>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                        I am a passionate security researcher with a focus on digital forensics and data recovery. I spend my time exploring the hidden corners of computer systems to uncover vulnerabilities and recover lost information. My skills lie in Python and C#, where I develop custom tools and scripts to aid in my research. I'm always eager to learn new things and contribute to the open-source community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="flex items-center justify-center section-padding bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500 py-16">
+            <div class="max-w-4xl w-full text-center px-4">
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-4 shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">My Projects</h2>
+                    <!-- This is the container where the GitHub repos will be dynamically loaded -->
+                    <div id="repo-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Projects will be loaded here by script.js -->
+                        <p class="text-gray-500 dark:text-gray-400">Loading projects...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Stuff Section -->
+        <section id="fun-stuff" class="min-h-screen flex items-center justify-center section-padding bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+            <div class="container mx-auto p-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">Fun Stuff</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Percentage Tracker Box -->
+                    <div class="bg-blue-200 dark:bg-blue-900 rounded-2xl p-6 shadow-lg border border-blue-300 dark:border-blue-800">
+                        <h3 class="text-xl font-bold text-blue-800 dark:text-blue-200 mb-2">My Time on This Page</h3>
+                        <p class="text-md text-blue-700 dark:text-blue-300">
+                            Live look at how much of my life you've spent on this page in this session.
+                        </p>
+                        <p id="percentage" class="text-3xl font-extrabold text-blue-900 dark:text-blue-100 mt-4 tracking-wider">
+                            0.000000000000000%
+                        </p>
+                    </div>
+
+                    <!-- Visitor Counter Box -->
+                    <div class="bg-green-200 dark:bg-green-900 rounded-2xl p-6 shadow-lg border border-green-300 dark:border-green-800">
+                        <h3 class="text-xl font-bold text-green-800 dark:text-green-200 mb-2">Page Visits</h3>
+                        <p class="text-md text-green-700 dark:text-green-300">
+                            This page has been visited this many times by you.
+                        </p>
+                        <p id="visitor-count" class="text-3xl font-extrabold text-green-900 dark:text-green-100 mt-4 tracking-wider">
+                            0
+                        </p>
+                    </div>
+
+                    <!-- Spotify Player Box -->
+                    <div class="bg-purple-200 dark:bg-purple-900 rounded-2xl p-6 shadow-lg border border-purple-300 dark:border-purple-800 flex flex-col items-center">
+                        <h3 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">My Music</h3>
+                        <div class="w-full">
+                            <iframe 
+                                style="border-radius:12px" 
+                                src="https://open.spotify.com/embed/artist/2x3jrWP8AUvYYvn8sriit8" 
+                                width="100%" 
+                                height="352" 
+                                frameBorder="0" 
+                                allowfullscreen="" 
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section id="socials" class="min-h-screen flex items-center justify-center section-padding bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+            <div class="max-w-4xl w-full text-center p-8 mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 md:p-10 shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">Socials</h2>
+                    <p class="mb-6 text-gray-600 dark:text-gray-400">Connect with me on the web!</p>
+                    <div class="flex flex-col space-y-6">
+                        <!-- Professional Socials -->
+                        <div class="flex justify-center flex-wrap space-x-6">
+                            <!-- LinkedIn Icon -->
+                            <a href="https://www.linkedin.com/in/nir-flatau/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors duration-200">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
+                            <!-- Github Icon -->
+                            <a href="https://github.com/loaflover" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">
+                                <i class="fab fa-github fa-2x"></i>
+                            </a>
+                            <!-- Youtube Music Icon -->
+                            <a href="https://music.youtube.com/channel/UC6KvMg3Xj5RfJgsDP_4aPZg?si=cTFJ91h1I1nSRjgR" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 transition-colors duration-200">
+                                <i class="fa-solid fa-music fa-2x"></i>
+                            </a>
+                        </div>
+                        <!-- Personal Socials -->
+                        <div class="flex justify-center flex-wrap space-x-6">
+                            <!-- X (formerly Twitter) Icon -->
+                            <a href="https://x.com/_loaflover_" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                                <i class="fab fa-x-twitter fa-2x"></i>
+                            </a>
+                            <!-- Instagram Icon -->
+                            <a href="https://www.instagram.com/nir-flatau/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors duration-200">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                            <!-- Discord Icon -->
+                            <a href="https://discordapp.com/users/696398188583845949" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">
+                                <i class="fab fa-discord fa-2x"></i>
+                            </a>
+                            <!-- Steam Icon -->
+                            <a href="https://steamcommunity.com/id/loaflover/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                                <i class="fab fa-steam fa-2x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="min-h-screen flex items-center justify-center section-padding bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 transition-colors duration-500">
+            <div class="max-w-4xl w-full text-center p-8 mx-auto">
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 md:p-10 shadow-lg">
+                    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">Contact Me</h2>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                        I'd love to hear from you! Feel free to send me an email.
+                    </p>
+                    <a href="mailto:flataunir@gmail.com" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors duration-200 shadow-md">
+                        <i class="fa-solid fa-envelope fa-lg mr-3"></i>
+                        <span>Email Me</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
