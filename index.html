@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2g8w3+C0v1L4J/S/m1c+o/VbA/jP5Vv/6aA/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2g8w3+C0v1L4J/S/m1c+o/VbA/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
 
@@ -15,7 +15,8 @@
     <header class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-indigo-600">LoafLover</a>
-            <ul class="flex space-x-4 md:space-x-8 items-center">
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-4 md:space-x-8 items-center">
                 <li><a id="nav-home" href="#home" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="home">Home</a></li>
                 <li><a id="nav-about" href="#about" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="about">About</a></li>
                 <li><a id="nav-projects" href="#projects" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="projects">Projects</a></li>
@@ -23,8 +24,26 @@
                 <li><a id="nav-socials" href="#socials" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="socials">Socials</a></li>
                 <li><a id="nav-contact" href="#contact" class="nav-link text-gray-600 dark:text-gray-400 font-medium transition-colors" data-target="contact">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="menu-button" class="text-gray-800 dark:text-gray-200 text-2xl focus:outline-none">
+                    <i id="menu-icon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-20 right-4 p-6 w-64 rounded-xl shadow-xl bg-white dark:bg-gray-800 z-40 transition-transform duration-300 ease-in-out">
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#home" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="home">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="about">About</a></li>
+            <li><a href="#projects" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="projects">Projects</a></li>
+            <li><a href="#fun-stuff" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="fun-stuff">Fun Stuff</a></li>
+            <li><a href="#socials" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="socials">Socials</a></li>
+            <li><a href="#contact" class="mobile-nav-link text-xl font-bold text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" data-target="contact">Contact</a></li>
+        </ul>
+    </div>
 
     <main>
         <!-- Home Section -->
@@ -85,9 +104,9 @@
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8">Fun Stuff</h2>
                 <div class="grid grid-cols-1 gap-8">
                     <!-- Percentage Tracker Box -->
-                    <div class="bg-blue-200 dark:bg-blue-900 rounded-2xl p-6 shadow-lg border border-blue-300 dark:border-blue-800">
-                        <h3 class="text-xl font-bold text-blue-800 dark:text-blue-200 mb-2">My Time on This Page</h3>
-                        <p class="text-md text-blue-700 dark:text-blue-300">
+                    <div class="bg-blue-200 dark:bg-blue-800 rounded-2xl p-6 shadow-lg border border-blue-300 dark:border-blue-700">
+                        <h3 class="text-xl font-bold text-blue-800 dark:text-blue-300 mb-2">My Time on This Page</h3>
+                        <p class="text-md text-blue-700 dark:text-blue-200">
                             Live look at how much of my life you've spent on this page in this session.
                         </p>
                         <p id="percentage" class="text-3xl font-extrabold text-blue-900 dark:text-blue-100 mt-4 tracking-wider">
@@ -96,9 +115,9 @@
                     </div>
 
                     <!-- Visitor Counter Box -->
-                    <div class="bg-green-200 dark:bg-green-900 rounded-2xl p-6 shadow-lg border border-green-300 dark:border-green-800">
-                        <h3 class="text-xl font-bold text-green-800 dark:text-green-200 mb-2">Page Visits</h3>
-                        <p class="text-md text-green-700 dark:text-green-300">
+                    <div class="bg-green-200 dark:bg-green-800 rounded-2xl p-6 shadow-lg border border-green-300 dark:border-green-700">
+                        <h3 class="text-xl font-bold text-green-800 dark:text-green-300 mb-2">Page Visits</h3>
+                        <p class="text-md text-green-700 dark:text-green-200">
                             This page has been visited this many times by you.
                         </p>
                         <p id="visitor-count" class="text-3xl font-extrabold text-green-900 dark:text-green-100 mt-4 tracking-wider">
@@ -107,19 +126,10 @@
                     </div>
 
                     <!-- Spotify Player Box -->
-                    <div class="bg-purple-200 dark:bg-purple-900 rounded-2xl p-6 shadow-lg border border-purple-300 dark:border-purple-800 flex flex-col items-center">
-                        <h3 class="text-xl font-bold text-purple-800 dark:text-purple-200 mb-4">My Music</h3>
+                    <div class="bg-purple-200 dark:bg-purple-800 rounded-2xl p-6 shadow-lg border border-purple-300 dark:border-purple-700 flex flex-col items-center">
+                        <h3 class="text-xl font-bold text-purple-800 dark:text-purple-300 mb-4">My Music</h3>
                         <div class="w-full">
-                            <iframe 
-                                style="border-radius:12px" 
-                                src="https://open.spotify.com/embed/artist/2x3jrWP8AUvYYvn8sriit8" 
-                                width="100%" 
-                                height="352" 
-                                frameBorder="0" 
-                                allowfullscreen="" 
-                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                                loading="lazy">
-                            </iframe>
+                            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2x3jrWP8AUvYYvn8sriit8" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -151,7 +161,7 @@
                         <!-- Personal Socials -->
                         <div class="flex justify-center flex-wrap space-x-6">
                             <!-- X (formerly Twitter) Icon -->
-                            <a href="https://x.com/_loaflover_" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                            <a href="https://x.com/_loaflover_" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
                                 <i class="fab fa-x-twitter fa-2x"></i>
                             </a>
                             <!-- Instagram Icon -->
@@ -159,11 +169,11 @@
                                 <i class="fab fa-instagram fa-2x"></i>
                             </a>
                             <!-- Discord Icon -->
-                            <a href="https://discordapp.com/users/696398188583845949" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200">
+                            <a href="https://discordapp.com/users/696398188583845949" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors duration-200">
                                 <i class="fab fa-discord fa-2x"></i>
                             </a>
                             <!-- Steam Icon -->
-                            <a href="https://steamcommunity.com/id/loaflover/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white transition-colors duration-200">
+                            <a href="https://steamcommunity.com/id/loaflover/" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200">
                                 <i class="fab fa-steam fa-2x"></i>
                             </a>
                         </div>
@@ -180,7 +190,7 @@
                     <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                         I'd love to hear from you! Feel free to send me an email.
                     </p>
-                    <a href="mailto:flataunir@gmail.com" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors duration-200 shadow-md">
+                    <a href="mailto:business@loaflover.xyz" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors duration-200 shadow-md">
                         <i class="fa-solid fa-envelope fa-lg mr-3"></i>
                         <span>Email Me</span>
                     </a>

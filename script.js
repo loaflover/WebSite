@@ -51,10 +51,10 @@ window.onload = function() {
      */
     function renderRepoCard(repo) {
         return `
-            <a href="${repo.html_url}" target="_blank" class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 block text-left">
-                <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">${repo.name}</h3>
+            <a href="${repo.html_url}" target="_blank" class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 block text-left">
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">${repo.name}</h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">${repo.description || 'No description provided.'}</p>
-                <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+                <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-300">
                     <!-- Language display, or an empty span if no language is specified -->
                     ${repo.language ? `
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -175,5 +175,33 @@ window.onload = function() {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+
+    // Mobile menu toggle functionality
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (menuButton) {
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+    }
+
+    // Hide the mobile menu after a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        });
     });
 };
